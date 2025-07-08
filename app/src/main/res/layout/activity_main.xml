@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Top section - Main ScrollView with more space -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔒 Steganography"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@color/blue"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Host Files Selection -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📂 Select Host Files"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@color/grey"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnSelectCoverImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Host Image"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/btnSelectCoverAudio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Host Audio"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <!-- Secret Text Input -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✍️ Secret Text"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@color/grey"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etSecretText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your secret text here..."
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:minLines="2"
+                android:maxLines="4"
+                android:gravity="top"
+                android:background="@color/grey"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Hiding Operations -->
+            <TextView
+                android:id="@+id/tvHidingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔐 Hiding Operations"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@color/grey"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <!-- Image Hiding Buttons -->
+            <LinearLayout
+                android:id="@+id/layoutImageHiding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnHideTextInImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🔤 Hide Text in Image"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp" />
+
+                <Button
+                    android:id="@+id/btnHideImageInImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🖼️ Hide Image in Image"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp" />
+
+                <Button
+                    android:id="@+id/btnHideAudioInImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎵 Hide Audio in Image"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <!-- Audio Hiding Buttons -->
+            <LinearLayout
+                android:id="@+id/layoutAudioHiding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnHideTextInAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🔤 Hide Text in Audio"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp" />
+
+                <Button
+                    android:id="@+id/btnHideImageInAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🖼️ Hide Image in Audio"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp" />
+
+                <Button
+                    android:id="@+id/btnHideAudioInAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎵 Hide Audio in Audio"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <!-- Extraction Operations -->
+            <TextView
+                android:id="@+id/tvExtractionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔍 Data Extraction"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@color/grey"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/layoutExtraction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnExtractFromImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Extract from Image"
+                    android:layout_marginEnd="4dp"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/btnExtractFromAudio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Extract from Audio"
+                    android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <!-- Save Buttons -->
+            <TextView
+                android:id="@+id/tvSaveTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💾 Save"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@color/grey"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/layoutSaveButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnSaveImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💾 Save Image to Gallery"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnSaveAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎵 Save Audio to Gallery"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Audio Play Button -->
+            <Button
+                android:id="@+id/btnPlayAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Play Extracted Audio"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Image Display -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🖼️ Image Display"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@color/grey"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Original Image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="4dp" />
+
+                    <ImageView
+                        android:id="@+id/ivOriginalImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/grey" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Result / Processed Image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="4dp" />
+
+                    <ImageView
+                        android:id="@+id/ivResultImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/grey" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom results box - smaller -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📋 Results and Operations Log"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnClearResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🗑️ Clear"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:padding="8dp"
+                android:backgroundTint="@color/grey"
+                android:textColor="@color/black"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnScrollToBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⬇️"
+                android:textSize="12sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:padding="8dp"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:padding="12dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:id="@+id/tvResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="2dp" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
